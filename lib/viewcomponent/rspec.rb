@@ -2,7 +2,7 @@
 
 require_relative 'rspec/version'
 
-module Viewcomponent
+module ViewComponent
   module RSpec
     class Error < StandardError; end
     # Your code goes here...
