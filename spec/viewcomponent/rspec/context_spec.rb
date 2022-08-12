@@ -21,12 +21,15 @@ RSpec.describe ViewComponent::RSpec::Context do
       end
     end
 
-    describe 'component instance' do
+    describe '#initialize' do
       subject { component_instance }
 
       it { is_expected.to be_an ExampleComponent }
-      it { is_expected.to be_rendered }
       it { is_expected.to have_attributes(color: 'red') }
+    end
+
+    describe '#render?' do
+      it { is_expected.to be_rendered }
 
       context 'with nil content' do
         let(:content) { ->(view_context = nil) {} }
