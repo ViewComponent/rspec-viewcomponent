@@ -4,7 +4,7 @@ require_relative "lib/viewcomponent/rspec/version"
 
 Gem::Specification.new do |spec|
   spec.name = "viewcomponent-rspec"
-  spec.version = Viewcomponent::Rspec::VERSION
+  spec.version = Viewcomponent::RSpec::VERSION
   spec.authors = ["Simon Fish"]
   spec.email = ["si@mon.fish"]
 
