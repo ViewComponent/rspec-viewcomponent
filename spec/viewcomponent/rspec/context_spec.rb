@@ -8,25 +8,28 @@ RSpec.describe ViewComponent::RSpec::Context do
   describe ExampleComponent, type: :component do
     include_context 'ViewComponent'
 
-    let(:args) { ['Hello World'] }
+    let(:args) { ['red'] }
+    let(:content) { ->(_view_context = nil) { 'Hello World' } }
 
     describe 'rendered component' do
-      it { is_expected.to have_css('p', text: 'Hello World') }
+      it { is_expected.to have_css('p.red', text: 'Hello World') }
 
-      context 'with nil arg' do
-        let(:args) { [nil] }
+      context 'with nil content' do
+        let(:content) { ->(view_context = nil) {} }
 
         it { is_expected.to be_empty }
       end
     end
 
     describe 'component instance' do
-      subject { component }
+      subject { component_instance }
 
       it { is_expected.to be_an ExampleComponent }
+      it { is_expected.to be_rendered }
+      it { is_expected.to have_attributes(color: 'red') }
 
-      context 'with nil arg' do
-        let(:args) { [nil] }
+      context 'with nil content' do
+        let(:content) { ->(view_context = nil) {} }
 
         it { is_expected.not_to be_rendered }
       end

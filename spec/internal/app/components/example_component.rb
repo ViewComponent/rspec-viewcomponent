@@ -1,13 +1,15 @@
 class ExampleComponent < ViewComponent::Base
-  def initialize(text)
-    @text = text
+  attr_reader :color
+
+  def initialize(color)
+    @color = color
   end
 
   def call
-    tag.p { @text }
+    tag.p(class: color) { content }
   end
 
   def render?
-    @text
+    content
   end
 end
