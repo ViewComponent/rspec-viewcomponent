@@ -63,7 +63,7 @@ end
 As you can see there, the context also makes use of two variables defined with `let`:
 
 - `args`, passed to the component upon initialize, e.g. `'red'` in the case of
-  `ExampleComponent.new('red')`.
+  `ExampleComponent.new('red')`. `kwargs` is also available for keyword arguments.
 - `content`, passed to the component in a block when it's rendered, e.g.
   `ExampleComponent.new.with_content('Hello World')` or
 
