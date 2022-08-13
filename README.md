@@ -26,15 +26,13 @@ Require the gem in your `spec_helper.rb`:
 
 `require 'rspec-viewcomponent'`
 
-Make the shared context available to component examples:
+Then, make the shared context available to component examples:
 
 ```
 RSpec.configure do |config|
   config.include RSpec::ViewComponent::Context, type: :component
 end
 ```
-
-Then, in each of your component specs, `include_context 'ViewComponent'`.
 
 It's suggested that you follow the patterns laid out in
 `spec/viewcomponent/rspec/context_spec.rb` when testing your component.
