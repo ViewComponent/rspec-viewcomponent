@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require_relative 'viewcomponent/version'
-require_relative 'viewcomponent/context'
+require_relative "viewcomponent/version"
+require_relative "viewcomponent/context"
 
 module RSpec
   module ViewComponent

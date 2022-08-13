@@ -1,11 +1,11 @@
-require 'active_support/concern'
+require "active_support/concern"
 module RSpec
   module ViewComponent
     module Context
       extend ActiveSupport::Concern
 
       included do
-        RSpec.shared_context 'ViewComponent' do
+        RSpec.shared_context "ViewComponent" do
           subject do
             render_inline component, &content
             rendered_component
@@ -25,7 +25,7 @@ module RSpec
           end
         end
 
-        include_context 'ViewComponent'
+        include_context "ViewComponent"
       end
     end
   end
