@@ -8,7 +8,7 @@ specify their function without the cruft of boilerplate.
 
 Add this line to your application's Gemfile, ideally in the `test` group:
 
-```ruby
+```rb
 gem 'rspec-viewcomponent'
 ```
 
@@ -24,11 +24,13 @@ Or install it yourself as:
 
 Require the gem in your `spec_helper.rb`:
 
-`require 'rspec-viewcomponent'`
+```rb
+require 'rspec-viewcomponent'
+```
 
 Then, make the shared context available to component examples:
 
-```
+```rb
 RSpec.configure do |config|
   config.include RSpec::ViewComponent::Context, type: :component
 end
@@ -41,7 +43,7 @@ on methods you call upon it. `RSpec::ViewComponent::Context` makes this
 available as the `subject` of any tests by default, allowing you to write
 one-line tests with matchers like `have_css` and `be_empty`:
 
-```ruby
+```rb
 describe ExampleComponent do
   let(:args) { ['red'] }
   let(:content) { ->(_view_context = nil) { 'Hello World' } }
