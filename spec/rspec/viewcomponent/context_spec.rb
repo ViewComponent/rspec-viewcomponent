@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe ViewComponent::RSpec::Context do
+RSpec.describe RSpec::ViewComponent::Context do
   include described_class
 
   describe ExampleComponent, type: :component do
@@ -29,6 +29,8 @@ RSpec.describe ViewComponent::RSpec::Context do
     end
 
     describe '#render?' do
+      subject { component_instance }
+
       it { is_expected.to be_rendered }
 
       context 'with nil content' do

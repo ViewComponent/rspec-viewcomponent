@@ -1,6 +1,6 @@
-# ViewComponent::RSpec
+# RSpec::ViewComponent
 
-ViewComponent::Rspec provides contexts that help you write clean one-line specs
+RSpec::ViewComponent provides contexts that help you write clean one-line specs
 for your components. This enables you to test that they respond as expected and
 specify their function without the cruft of boilerplate.
 
@@ -9,7 +9,7 @@ specify their function without the cruft of boilerplate.
 Add this line to your application's Gemfile, ideally in the `test` group:
 
 ```ruby
-gem 'viewcomponent-rspec'
+gem 'rspec-viewcomponent'
 ```
 
 And then execute:
@@ -18,19 +18,19 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install viewcomponent-rspec
+    $ gem install rspec-viewcomponent
 
 ## Usage
 
 Require the gem in your `spec_helper.rb`:
 
-`require 'viewcomponent-rspec'`
+`require 'rspec-viewcomponent'`
 
 Make the shared context available to component examples:
 
 ```
 RSpec.configure do |config|
-  config.include ViewComponent::RSpec::Context, type: :component
+  config.include RSpec::ViewComponent::Context, type: :component
 end
 ```
 
@@ -39,7 +39,7 @@ Then, in each of your component specs, `include_context 'ViewComponent'`.
 It's suggested that you follow the patterns laid out in
 `spec/viewcomponent/rspec/context_spec.rb` when testing your component.
 Generally, you'll only need to test the rendered component unless you're reliant
-on methods you call upon it. `ViewComponent::RSpec::Context` makes this
+on methods you call upon it. `RSpec::ViewComponent::Context` makes this
 available as the `subject` of any tests by default, allowing you to write
 one-line tests with matchers like `have_css` and `be_empty`:
 
@@ -90,10 +90,10 @@ git commits and the created tag, and push the `.gem` file to
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at
-https://github.com/boardfish/viewcomponent-rspec. This project is intended to be
+https://github.com/viewcomponent/rspec-viewcomponent. This project is intended to be
 a safe, welcoming space for collaboration, and contributors are expected to
 adhere to the [code of
-conduct](https://github.com/boardfish/viewcomponent-rspec/blob/main/CODE_OF_CONDUCT.md).
+conduct](https://github.com/viewcomponent/rspec-viewcomponent/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -102,6 +102,6 @@ License](https://opensource.org/licenses/MIT).
 
 ## Code of Conduct
 
-Everyone interacting in the ViewComponent::RSpec project's codebases, issue
+Everyone interacting in the RSpec::ViewComponent project's codebases, issue
 trackers, chat rooms and mailing lists is expected to follow the [code of
-conduct](https://github.com/boardfish/viewcomponent-rspec/blob/main/CODE_OF_CONDUCT.md).
+conduct](https://github.com/viewcomponent/rspec-viewcomponent/blob/main/CODE_OF_CONDUCT.md).

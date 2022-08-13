@@ -1,5 +1,5 @@
-module ViewComponent
-  module RSpec
+module RSpec
+  module ViewComponent
     module Context
       RSpec.shared_context 'ViewComponent' do
         subject do

@@ -2,5 +2,5 @@
 
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in viewcomponent-rspec.gemspec
+# Specify your gem's dependencies in rspec-viewcomponent.gemspec
 gemspec

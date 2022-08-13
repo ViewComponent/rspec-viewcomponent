@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    viewcomponent-rspec (0.1.0)
+    rspec-viewcomponent (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -224,9 +224,9 @@ DEPENDENCIES
   rails (~> 7)
   rake (~> 13)
   rspec-rails (~> 5)
+  rspec-viewcomponent!
   standard (~> 1.3)
   view_component (~> 2)
-  viewcomponent-rspec!
 
 BUNDLED WITH
    2.3.4

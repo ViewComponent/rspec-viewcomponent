@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-require_relative 'lib/viewcomponent/rspec/version'
+require_relative 'lib/rspec/viewcomponent/version'
 
 Gem::Specification.new do |spec|
-  spec.name = 'viewcomponent-rspec'
-  spec.version = ViewComponent::RSpec::VERSION
+  spec.name = 'rspec-viewcomponent'
+  spec.version = RSpec::ViewComponent::VERSION
   spec.authors = ['Simon Fish']
   spec.email = ['si@mon.fish']
 
   spec.summary = 'RSpec helpers for ViewComponent tests'
   spec.description = 'Provides setup to prevent you writing excessive boilerplate in ViewComponent tests.'
-  spec.homepage = 'https://github.com/boardfish/viewcomponent-rspec'
+  spec.homepage = 'https://github.com/viewcomponent/rspec-viewcomponent'
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 2.6.0'
 
