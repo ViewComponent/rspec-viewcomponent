@@ -6,8 +6,6 @@ RSpec.describe RSpec::ViewComponent::Context do
   include described_class
 
   describe ExampleComponent, type: :component do
-    include_context 'ViewComponent'
-
     let(:args) { ['red'] }
     let(:content) { ->(_view_context = nil) { 'Hello World' } }
 

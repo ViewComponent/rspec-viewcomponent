@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     rspec-viewcomponent (0.1.0)
+      activesupport
 
 GEM
   remote: https://rubygems.org/
