@@ -24,6 +24,19 @@ RSpec.describe RSpec::ViewComponent::Context do
 
       it { is_expected.to be_an ExampleComponent }
       it { is_expected.to have_attributes(color: "red") }
+
+      context "given a bunch of args" do
+        let(:args) { %w[red blue green] }
+        let(:kwargs) { {other_color: "yellow"} }
+
+        it {
+          is_expected.to have_attributes(
+            color: "red",
+            aargs: %w[blue green],
+            kwargs: {other_color: "yellow"}
+          )
+        }
+      end
     end
 
     describe "#render?" do

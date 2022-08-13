@@ -1,8 +1,10 @@
 class ExampleComponent < ViewComponent::Base
-  attr_reader :color
+  attr_reader :color, :aargs, :kwargs
 
-  def initialize(color)
+  def initialize(color, *aargs, **kwargs)
     @color = color
+    @aargs = aargs
+    @kwargs = kwargs
   end
 
   def call

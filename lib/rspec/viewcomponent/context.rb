@@ -11,7 +11,12 @@ module RSpec
             rendered_component
           end
 
-          let(:component) { described_class.new(*args) }
+          let(:component) do
+            described_class.new(
+              *(defined?(args) ? args : []),
+              **(defined?(kwargs) ? kwargs : {})
+            )
+          end
           let(:content) { ->(_view_context = nil) {} }
           let(:component_instance) do
             rendered_content = content.call
