@@ -38,6 +38,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
+      env:
+        BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/rails_${{ matrix.rails_version }}.gemfile
       with:
         ruby-version: ${{ matrix.ruby_version }}
         bundler-cache: true
