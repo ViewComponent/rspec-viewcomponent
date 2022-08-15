@@ -35,18 +35,16 @@ jobs:
             ruby_version: '2.6'
     env:
       BUNDLE_PATH: ${{ github.workspace }}/vendor/bundle
+      BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/rails_${{ matrix.rails_version }}.gemfile
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
-      env:
-        BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/rails_${{ matrix.rails_version }}.gemfile
       with:
         ruby-version: ${{ matrix.ruby_version }}
         bundler-cache: true
-    - run: gem install bundler appraisal
     - name: Run the default task
       run: |
-        appraisal rails-${{ matrix.rails_version }} rake
+        bundle exec rake
       env:
         RAILS_VERSION: ${{ matrix.rails_version }}
