@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Ruby ${{ matrix.ruby }}
+    name: Ruby ${{ matrix.ruby_version }}, Rails ${{ matrix.rails_version }}
     strategy:
       fail-fast: false
       matrix:
@@ -48,7 +48,7 @@ jobs:
     - name: Run the default task
       run: |
         bundle config path vendor/bundle
-        bundle update
-        bundle exec rake
+        bundle exec appraisal rails-${{ matrix.rails_version }} bundle
+        bundle exec appraisal rails-${{ matrix.rails_version }} rake
       env:
         RAILS_VERSION: ${{ matrix.rails_version }}
