@@ -49,8 +49,8 @@ jobs:
         key: gems-build-rails-${{ matrix.rails_version }}-ruby-${{ matrix.ruby_version }}-${{ hashFiles('**/Gemfile.lock') }}
     - name: Run the default task
       run: |
-        bundle config path vendor/bundle
         bundle exec appraisal rails-${{ matrix.rails_version }} bundle
         bundle exec appraisal rails-${{ matrix.rails_version }} rake
       env:
         RAILS_VERSION: ${{ matrix.rails_version }}
+        BUNDLE_PATH: ${{ github.workspace }}/vendor/bundle
