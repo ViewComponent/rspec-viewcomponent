@@ -47,7 +47,6 @@ jobs:
     - run: gem install bundler appraisal
     - name: Run the default task
       run: |
-        appraisal rails-${{ matrix.rails_version }} bundle install
         appraisal rails-${{ matrix.rails_version }} rake
       env:
         RAILS_VERSION: ${{ matrix.rails_version }}
